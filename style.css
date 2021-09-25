@@ -1,16 +1,13 @@
-/*limite largeur écran : 1100px => placement bouleversé en écrans plus petits*/
-
 @import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200&display=swap');
 
 * {
     font-family: 'Gemunu Libre', sans-serif;
 }
-
 body {
     background: linear-gradient(272deg, #6cd2b8, #68e195, #c9e08c);
     background-size: 600% 600%;
-    -webkit-animation: AnimationName 20s ease infinite;
-    animation: AnimationName 20s ease infinite;
+    -webkit-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
 }
 @-webkit-keyframes AnimationName {
     0%{background-position:0% 52%}
@@ -22,49 +19,39 @@ body {
     50%{background-position:100% 49%}
     100%{background-position:0% 52%}
 }
-
 #superconteneur {
     border-radius: 20px;
     margin: 0 auto;
     height: 50%;
-    width: 60%;
-    /*border: solid 1px red;*/
+    width: 50%;
 }
-
 #conteneur {
-    /*flex-wrap: wrap;*/
-    flex-flow: row wrap;
-    justify-content: center;
-    margin: 0 auto;
-    display: flex;
-    /*border: solid 1px aqua;*/
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-gap: 5px;
+    justify-items: center;
+    align-items: center;
 }
-
 input {
-    width: 150px;
+    width: 130px;
     height: 100px;
     border-radius: 25px;
-    margin: 0.2rem;
     border: none;
-    /*border: solid 1px pink;*/
 }
 input:hover{
     background-color: RGBA(255,255,255,0.5);
     transition: background-color 0.3s;
 }
-
 #output {
     margin: 2rem auto 2rem;
     padding: 1.5rem;
     width: 50%;
-    /*height: 50px;*/
     background: RGBA(255,255,255,0.5);
     text-align: center;
-    /*margin-top:  50px;*/
     font-size: 2.5rem;
     border-radius: 25px;
 }
-
 input[value="AC"]{ font-size: 2.5rem;}
 input[value="CE"]{ font-size: 2.5rem;}
 input[value="%"]{ font-size: 2.5rem;}
@@ -85,3 +72,46 @@ input[value="0"]{ font-size: 2.5rem;}
 input[value="1"]{ font-size: 2.5rem;}
 input[value="."]{ font-size: 2.5rem;}
 input[value="="]{ font-size: 2.5rem;}
+
+@media (max-width: 700px) {
+    #superconteneur {
+        width: 70%;
+    }
+    #conteneur {
+        grid-gap: 3px;
+    }
+    input {
+        width: 55px;
+        height: 35px;
+    }
+    input:focus{
+        background-color: RGBA(255,255,255,0.5);
+        transition: background-color 0.3s;
+    }
+    #output {
+        margin: 1.5rem auto 1.5rem;
+        padding: 1rem;
+        width: 80%;
+        font-size: 1.7rem;
+    }
+    input[value="AC"]{ font-size: 1.4rem;}
+    input[value="CE"]{ font-size: 1.4rem;}
+    input[value="%"]{ font-size: 1.4rem;}
+    input[value="/"]{ font-size: 1.4rem;}
+    input[value="7"]{ font-size: 1.4rem;}
+    input[value="8"]{ font-size: 1.4rem;}
+    input[value="9"]{ font-size: 1.4rem;}
+    input[value="*"]{ font-size: 1.4rem;}
+    input[value="4"]{ font-size: 1.4rem;}
+    input[value="5"]{ font-size: 1.4rem;}
+    input[value="6"]{ font-size: 1.4rem;}
+    input[value="-"]{ font-size: 1.4rem;}
+    input[value="1"]{ font-size: 1.4rem;}
+    input[value="2"]{ font-size: 1.4rem;}
+    input[value="3"]{ font-size: 1.4rem;}
+    input[value="+"]{ font-size: 1.4rem;}
+    input[value="0"]{ font-size: 1.4rem;}
+    input[value="1"]{ font-size: 1.4rem;}
+    input[value="."]{ font-size: 1.4rem;}
+    input[value="="]{ font-size: 1.4rem;}
+}
